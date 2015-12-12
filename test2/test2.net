@@ -1,8 +1,8 @@
 (export (version D)
   (design
     (source /home/pedro/proj/kicad/test2/test2.sch)
-    (date "Sat 12 Dec 2015 08:49:45 AM MST")
-    (tool "Eeschema 4.0.0-2.201512062335+6193~38~ubuntu15.10.1-stable")
+    (date "Sat 12 Dec 2015 09:54:43 AM MST")
+    (tool "Eeschema 0.201512080931+6353~38~ubuntu14.04.1-stable")
     (sheet (number 1) (name /) (tstamps /)
       (title_block
         (title "practice design 1")
@@ -102,10 +102,10 @@
         (pin (num 1) (name ~) (type passive))
         (pin (num 2) (name ~) (type passive)))))
   (libraries
-    (library (logical device)
-      (uri /usr/share/kicad/library/device.lib))
     (library (logical microchip)
-      (uri /usr/share/kicad/library/microchip.lib)))
+      (uri /usr/share/kicad/library/microchip.lib))
+    (library (logical device)
+      (uri /usr/share/kicad/library/device.lib)))
   (nets
     (net (code 1) (name "Net-(IC1-Pad16)")
       (node (ref IC1) (pin 16)))

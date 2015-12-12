@@ -1,0 +1,169 @@
+(pcb /home/pedro/proj/kicad/test4/test4.dsn
+  (parser
+    (string_quote ")
+    (space_in_quoted_tokens on)
+    (host_cad "KiCad's Pcbnew")
+    (host_version "0.201512080931+6353~38~ubuntu14.04.1-stable")
+  )
+  (resolution um 10)
+  (unit um)
+  (structure
+    (layer F.Cu
+      (type signal)
+      (property
+        (index 0)
+      )
+    )
+    (layer In1.Cu
+      (type power)
+      (property
+        (index 1)
+      )
+    )
+    (layer In2.Cu
+      (type power)
+      (property
+        (index 2)
+      )
+    )
+    (layer B.Cu
+      (type signal)
+      (property
+        (index 3)
+      )
+    )
+    (boundary
+      (rect pcb 122228 -95141 153362 -105431)
+    )
+    (via "Via[0-3]_600:400_um")
+    (rule
+      (width 250)
+      (clearance 200.1)
+      (clearance 200.1 (type default_smd))
+      (clearance 50 (type smd_smd))
+    )
+  )
+  (placement
+    (component "SMD_Packages:SSOP-20"
+      (place U1 125730 -101346 front 90 (PN 74LS245))
+      (place U2 149860 -101346 front 90 (PN 74LS245))
+    )
+  )
+  (library
+    (image "SMD_Packages:SSOP-20"
+      (outline (path signal 150  3810 1778  -3810 1778))
+      (outline (path signal 150  -3810 -1778  3810 -1778))
+      (outline (path signal 150  3810 1778  3810 -1778))
+      (outline (path signal 150  -3810 -1778  -3810 1778))
+      (outline (path signal 150  -2942.79 -1270  -2960.37 -1381  -3011.39 -1481.14  -3090.86 -1560.61
+            -3191 -1611.63  -3302 -1629.21  -3413 -1611.63  -3513.14 -1560.61
+            -3592.61 -1481.14  -3643.63 -1381  -3661.21 -1270  -3643.63 -1159
+            -3592.61 -1058.86  -3513.14 -979.393  -3413 -928.371  -3302 -910.79
+            -3191 -928.371  -3090.86 -979.393  -3011.39 -1058.86  -2960.37 -1159))
+      (outline (path signal 150  -3810 635  -3048 635))
+      (outline (path signal 150  -3048 635  -3048 -635))
+      (outline (path signal 150  -3048 -635  -3810 -635))
+      (pin Rect[T]Pad_406.4x1270_um 1 -2921 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 2 -2286 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 3 -1625.6 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 4 -965.2 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 5 -330.2 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 6 330.2 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 7 990.6 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 8 1625.6 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 9 2286 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 10 2921 -2667)
+      (pin Rect[T]Pad_406.4x1270_um 11 2921 2667)
+      (pin Rect[T]Pad_406.4x1270_um 12 2286 2667)
+      (pin Rect[T]Pad_406.4x1270_um 13 1625.6 2667)
+      (pin Rect[T]Pad_406.4x1270_um 14 990.6 2667)
+      (pin Rect[T]Pad_406.4x1270_um 15 330.2 2667)
+      (pin Rect[T]Pad_406.4x1270_um 16 -330.2 2667)
+      (pin Rect[T]Pad_406.4x1270_um 17 -965.2 2667)
+      (pin Rect[T]Pad_406.4x1270_um 18 -1625.6 2667)
+      (pin Rect[T]Pad_406.4x1270_um 19 -2286 2667)
+      (pin Rect[T]Pad_406.4x1270_um 20 -2921 2667)
+    )
+    (padstack Rect[T]Pad_406.4x1270_um
+      (shape (rect F.Cu -203.2 -635 203.2 635))
+      (attach off)
+    )
+    (padstack "Via[0-3]_600:400_um"
+      (shape (circle F.Cu 600))
+      (shape (circle In1.Cu 600))
+      (shape (circle In2.Cu 600))
+      (shape (circle B.Cu 600))
+      (attach off)
+    )
+  )
+  (network
+    (net "Net-(U1-Pad1)"
+      (pins U1-1 U1-9 U2-1 U2-11)
+    )
+    (net "Net-(U1-Pad2)"
+      (pins U1-2 U2-18)
+    )
+    (net "Net-(U1-Pad3)"
+      (pins U1-3 U2-17)
+    )
+    (net "Net-(U1-Pad4)"
+      (pins U1-4 U2-16)
+    )
+    (net "Net-(U1-Pad5)"
+      (pins U1-5 U2-15)
+    )
+    (net "Net-(U1-Pad6)"
+      (pins U1-6 U2-14)
+    )
+    (net "Net-(U1-Pad7)"
+      (pins U1-7 U2-13)
+    )
+    (net "Net-(U1-Pad19)"
+      (pins U1-8 U1-19 U2-12 U2-19)
+    )
+    (net GND
+      (pins U1-10 U2-10)
+    )
+    (net "Net-(U1-Pad11)"
+      (pins U1-11 U2-9)
+    )
+    (net "Net-(U1-Pad12)"
+      (pins U1-12 U2-8)
+    )
+    (net "Net-(U1-Pad13)"
+      (pins U1-13 U2-7)
+    )
+    (net "Net-(U1-Pad14)"
+      (pins U1-14 U2-6)
+    )
+    (net "Net-(U1-Pad15)"
+      (pins U1-15 U2-5)
+    )
+    (net "Net-(U1-Pad16)"
+      (pins U1-16 U2-4)
+    )
+    (net "Net-(U1-Pad17)"
+      (pins U1-17 U2-3)
+    )
+    (net "Net-(U1-Pad18)"
+      (pins U1-18 U2-2)
+    )
+    (net +3V3
+      (pins U1-20 U2-20)
+    )
+    (class kicad_default "" +3V3 GND "Net-(U1-Pad1)" "Net-(U1-Pad11)" "Net-(U1-Pad12)"
+      "Net-(U1-Pad13)" "Net-(U1-Pad14)" "Net-(U1-Pad15)" "Net-(U1-Pad16)"
+      "Net-(U1-Pad17)" "Net-(U1-Pad18)" "Net-(U1-Pad19)" "Net-(U1-Pad2)" "Net-(U1-Pad3)"
+      "Net-(U1-Pad4)" "Net-(U1-Pad5)" "Net-(U1-Pad6)" "Net-(U1-Pad7)"
+      (circuit
+        (use_via Via[0-3]_600:400_um)
+      )
+      (rule
+        (width 250)
+        (clearance 200.1)
+      )
+    )
+  )
+  (wiring
+  )
+)

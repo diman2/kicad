@@ -1,0 +1,251 @@
+EESchema Schematic File Version 2
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+EELAYER 25 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L 74LS245 U1
+U 1 1 566C5DFE
+P 4600 3800
+F 0 "U1" H 4700 4375 50  0000 L BNN
+F 1 "74LS245" H 4650 3225 50  0000 L TNN
+F 2 "SMD_Packages:SSOP-20" H 4600 3800 50  0001 C CNN
+F 3 "" H 4600 3800 50  0000 C CNN
+	1    4600 3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L 74LS245 U2
+U 1 1 566C5F05
+P 6950 3800
+F 0 "U2" H 7050 4375 50  0000 L BNN
+F 1 "74LS245" H 7000 3225 50  0000 L TNN
+F 2 "SMD_Packages:SSOP-20" H 6950 3800 50  0001 C CNN
+F 3 "" H 6950 3800 50  0000 C CNN
+	1    6950 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	6250 3300 5300 3300
+Wire Wire Line
+	6250 3400 5300 3400
+Wire Wire Line
+	5300 3500 6250 3500
+Wire Wire Line
+	6250 3600 5300 3600
+Wire Wire Line
+	5300 3700 6250 3700
+Wire Wire Line
+	6250 3800 5300 3800
+Wire Wire Line
+	6250 3900 5300 3900
+Wire Wire Line
+	5300 4000 6250 4000
+Wire Wire Line
+	7650 3300 7800 3300
+Wire Wire Line
+	7800 3300 7800 3050
+Wire Wire Line
+	7800 3050 3750 3050
+Wire Wire Line
+	3750 3050 3750 3300
+Wire Wire Line
+	3750 3300 3900 3300
+Wire Wire Line
+	3900 3400 3650 3400
+Wire Wire Line
+	3650 3400 3650 2950
+Wire Wire Line
+	3650 2950 7900 2950
+Wire Wire Line
+	7900 2950 7900 3400
+Wire Wire Line
+	7900 3400 7650 3400
+Wire Wire Line
+	7650 3500 8000 3500
+Wire Wire Line
+	8000 3500 8000 2850
+Wire Wire Line
+	8000 2850 3550 2850
+Wire Wire Line
+	3550 2850 3550 3500
+Wire Wire Line
+	3550 3500 3900 3500
+Wire Wire Line
+	3900 3600 3450 3600
+Wire Wire Line
+	3450 3600 3450 2750
+Wire Wire Line
+	3450 2750 8100 2750
+Wire Wire Line
+	8100 2750 8100 3600
+Wire Wire Line
+	8100 3600 7650 3600
+Wire Wire Line
+	7650 3700 8200 3700
+Wire Wire Line
+	8200 3700 8200 2650
+Wire Wire Line
+	8200 2650 3350 2650
+Wire Wire Line
+	3350 2650 3350 3700
+Wire Wire Line
+	3350 3700 3900 3700
+Wire Wire Line
+	3900 3800 3250 3800
+Wire Wire Line
+	3250 3800 3250 2550
+Wire Wire Line
+	3250 2550 8300 2550
+Wire Wire Line
+	8300 2550 8300 3800
+Wire Wire Line
+	8300 3800 7650 3800
+Wire Wire Line
+	7650 3900 8400 3900
+Wire Wire Line
+	8400 4600 8400 2450
+Wire Wire Line
+	8400 2450 3150 2450
+Wire Wire Line
+	3150 2450 3150 3900
+Wire Wire Line
+	3150 3900 3900 3900
+Wire Wire Line
+	3900 4000 3050 4000
+Wire Wire Line
+	3050 4000 3050 2350
+Wire Wire Line
+	3050 2350 8500 2350
+Wire Wire Line
+	8500 2350 8500 4750
+Wire Wire Line
+	8500 4000 7650 4000
+Wire Wire Line
+	3900 4300 3700 4300
+Wire Wire Line
+	3700 4300 3700 4600
+Wire Wire Line
+	3700 4600 8400 4600
+Wire Wire Line
+	6100 4600 6100 4300
+Wire Wire Line
+	6100 4300 6250 4300
+Wire Wire Line
+	6250 4200 5750 4200
+Wire Wire Line
+	5750 4200 5750 4750
+Wire Wire Line
+	8500 4750 3500 4750
+Wire Wire Line
+	3500 4750 3500 4200
+Wire Wire Line
+	3500 4200 3900 4200
+Connection ~ 5750 4750
+Connection ~ 8500 4000
+Connection ~ 6100 4600
+Connection ~ 8400 3900
+$Comp
+L GND #PWR01
+U 1 1 566C6758
+P 4600 5100
+F 0 "#PWR01" H 4600 4850 50  0001 C CNN
+F 1 "GND" H 4600 4950 50  0000 C CNN
+F 2 "" H 4600 5100 50  0000 C CNN
+F 3 "" H 4600 5100 50  0000 C CNN
+	1    4600 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L +3.3V #PWR02
+U 1 1 566C678E
+P 4600 2050
+F 0 "#PWR02" H 4600 1900 50  0001 C CNN
+F 1 "+3.3V" H 4600 2190 50  0000 C CNN
+F 2 "" H 4600 2050 50  0000 C CNN
+F 3 "" H 4600 2050 50  0000 C CNN
+	1    4600 2050
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	4600 2050 4600 3250
+Wire Wire Line
+	6950 3250 6950 2250
+Wire Wire Line
+	6950 2250 4600 2250
+Connection ~ 4600 2250
+Wire Wire Line
+	4600 5100 4600 4350
+Wire Wire Line
+	6950 4350 6950 4850
+Wire Wire Line
+	6950 4850 4600 4850
+Connection ~ 4600 4850
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 566C694D
+P 5000 2100
+F 0 "#FLG03" H 5000 2195 50  0001 C CNN
+F 1 "PWR_FLAG" H 5000 2280 50  0000 C CNN
+F 2 "" H 5000 2100 50  0000 C CNN
+F 3 "" H 5000 2100 50  0000 C CNN
+	1    5000 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG04
+U 1 1 566C696D
+P 4950 5050
+F 0 "#FLG04" H 4950 5145 50  0001 C CNN
+F 1 "PWR_FLAG" H 4950 5230 50  0000 C CNN
+F 2 "" H 4950 5050 50  0000 C CNN
+F 3 "" H 4950 5050 50  0000 C CNN
+	1    4950 5050
+	-1   0    0    1   
+$EndComp
+Wire Wire Line
+	5000 2100 5000 2250
+Connection ~ 5000 2250
+Wire Wire Line
+	4950 5050 4950 4850
+Connection ~ 4950 4850
+$EndSCHEMATC
