@@ -78,4 +78,18 @@ P 6 0 1 0  0 0  0 50  -75 100  0 150  75 100  0 50 N
 ENDDRAW
 ENDDEF
 #
+# test1
+#
+DEF test1 U 0 40 Y Y 1 F N
+F0 "U" 0 0 60 H V C CNN
+F1 "test1" 0 0 60 H V C CNN
+F2 "" 0 0 60 H V C CNN
+F3 "" 0 0 60 H V C CNN
+DRAW
+S -400 350 600 0 0 1 0 N
+X pin1 1 -600 200 200 R 50 50 1 1 I
+X pin2 2 800 200 200 L 50 50 1 1 I
+ENDDRAW
+ENDDEF
+#
 #End Library

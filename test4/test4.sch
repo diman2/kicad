@@ -28,6 +28,8 @@ LIBS:opto
 LIBS:atmel
 LIBS:contrib
 LIBS:valves
+LIBS:test1
+LIBS:test4-cache
 EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
@@ -248,4 +250,15 @@ Connection ~ 5000 2250
 Wire Wire Line
 	4950 5050 4950 4850
 Connection ~ 4950 4850
+$Comp
+L test1 U?
+U 1 1 5672C530
+P 7400 1600
+F 0 "U?" H 7400 1600 60  0000 C CNN
+F 1 "test1" H 7400 1600 60  0000 C CNN
+F 2 "" H 7400 1600 60  0000 C CNN
+F 3 "" H 7400 1600 60  0000 C CNN
+	1    7400 1600
+	1    0    0    -1  
+$EndComp
 $EndSCHEMATC
