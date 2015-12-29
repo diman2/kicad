@@ -1,0 +1,353 @@
+EESchema Schematic File Version 2
+LIBS:TOFE
+LIBS:xilinx7
+LIBS:power
+LIBS:device
+LIBS:transistors
+LIBS:conn
+LIBS:linear
+LIBS:regul
+LIBS:74xx
+LIBS:cmos4000
+LIBS:adc-dac
+LIBS:memory
+LIBS:xilinx
+LIBS:microcontrollers
+LIBS:dsp
+LIBS:microchip
+LIBS:analog_switches
+LIBS:motorola
+LIBS:texas
+LIBS:intel
+LIBS:audio
+LIBS:interface
+LIBS:digital-audio
+LIBS:philips
+LIBS:display
+LIBS:cypress
+LIBS:siliconi
+LIBS:opto
+LIBS:atmel
+LIBS:contrib
+LIBS:valves
+LIBS:artix-pcie-board-cache
+EELAYER 25 0
+EELAYER END
+$Descr A3 16535 11693
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+$Comp
+L xc7a15tfgg484 U1
+U 1 1 5681C7BF
+P 750 1150
+F 0 "U1" H 1681 153 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 1681 47  60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 750 1150 60  0001 C CNN
+F 3 "" H 750 1150 60  0000 C CNN
+	1    750  1150
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 2 1 5681C85D
+P 2750 1850
+F 0 "U1" H 3095 2140 60  0000 C CNN
+F 1 "xc7a15tfgg484" H 3095 2034 60  0000 C CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 2750 1850 60  0001 C CNN
+F 3 "" H 2750 1850 60  0000 C CNN
+	2    2750 1850
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 3 1 5681C91A
+P 3950 850
+F 0 "U1" H 5681 -1597 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 5681 -1703 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 3950 850 60  0001 C CNN
+F 3 "" H 3950 850 60  0000 C CNN
+	3    3950 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 4 1 5681C9EB
+P 6800 900
+F 0 "U1" H 8331 -1547 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 8331 -1653 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 6800 900 60  0001 C CNN
+F 3 "" H 6800 900 60  0000 C CNN
+	4    6800 900 
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 5 1 5681CAB2
+P 9650 850
+F 0 "U1" H 10881 -1597 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 10881 -1703 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 9650 850 60  0001 C CNN
+F 3 "" H 9650 850 60  0000 C CNN
+	5    9650 850 
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 6 1 5681CB2F
+P 10600 7450
+F 0 "U1" H 11731 6503 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 11731 6397 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 10600 7450 60  0001 C CNN
+F 3 "" H 10600 7450 60  0000 C CNN
+	6    10600 7450
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 7 1 5681CB98
+P 14100 1100
+F 0 "U1" H 15331 -1347 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 15331 -1453 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 14100 1100 60  0001 C CNN
+F 3 "" H 14100 1100 60  0000 C CNN
+	7    14100 1100
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 8 1 5681CBF1
+P 1100 5500
+F 0 "U1" H 2531 3053 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 2531 2947 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 1100 5500 60  0001 C CNN
+F 3 "" H 1100 5500 60  0000 C CNN
+	8    1100 5500
+	1    0    0    -1  
+$EndComp
+$Comp
+L xc7a15tfgg484 U1
+U 9 1 5681CCD4
+P 4100 8000
+F 0 "U1" H 4831 7753 60  0000 L CNN
+F 1 "xc7a15tfgg484" H 4831 7647 60  0000 L CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 4100 8000 60  0001 C CNN
+F 3 "" H 4100 8000 60  0000 C CNN
+	9    4100 8000
+	1    0    0    -1  
+$EndComp
+Text Label 3800 8000 0    60   ~ 0
+GND
+NoConn ~ 4100 8300
+$Comp
+L PWR_FLAG #FLG01
+U 1 1 5681D437
+P 3700 7850
+F 0 "#FLG01" H 3700 7945 50  0001 C CNN
+F 1 "PWR_FLAG" H 3700 8074 50  0000 C CNN
+F 2 "" H 3700 7850 50  0000 C CNN
+F 3 "" H 3700 7850 50  0000 C CNN
+	1    3700 7850
+	1    0    0    -1  
+$EndComp
+Text Label 2350 1850 0    60   ~ 0
+V2_5
+$Comp
+L PWR_FLAG #FLG02
+U 1 1 5681D83C
+P 2300 1550
+F 0 "#FLG02" H 2300 1645 50  0001 C CNN
+F 1 "PWR_FLAG" H 2300 1774 50  0000 C CNN
+F 2 "" H 2300 1550 50  0000 C CNN
+F 3 "" H 2300 1550 50  0000 C CNN
+	1    2300 1550
+	1    0    0    -1  
+$EndComp
+Text Label 700  10500 0    60   ~ 0
+V2_5
+$Comp
+L PWR_FLAG #FLG03
+U 1 1 5681EC86
+P 650 10200
+F 0 "#FLG03" H 650 10295 50  0001 C CNN
+F 1 "PWR_FLAG" H 650 10424 50  0000 C CNN
+F 2 "" H 650 10200 50  0000 C CNN
+F 3 "" H 650 10200 50  0000 C CNN
+	1    650  10200
+	1    0    0    -1  
+$EndComp
+$Comp
+L TOFE-4X U2
+U 1 1 5681F155
+P 8800 10000
+F 0 "U2" H 8350 12987 60  0000 C CNN
+F 1 "TOFE-4X" H 8350 12881 60  0000 C CNN
+F 2 "footlib:Xil_Artix_BGA_484" H 7500 9700 60  0001 C CNN
+F 3 "" H 7500 9700 60  0000 C CNN
+	1    8800 10000
+	1    0    0    -1  
+$EndComp
+$Comp
+L PWR_FLAG #FLG04
+U 1 1 5681F634
+P 7100 7150
+F 0 "#FLG04" H 7100 7245 50  0001 C CNN
+F 1 "PWR_FLAG" H 7100 7374 50  0000 C CNN
+F 2 "" H 7100 7150 50  0000 C CNN
+F 3 "" H 7100 7150 50  0000 C CNN
+	1    7100 7150
+	1    0    0    -1  
+$EndComp
+Text Label 7250 7300 0    60   ~ 0
+12V
+$Comp
+L PWR_FLAG #FLG05
+U 1 1 56821190
+P 6650 7900
+F 0 "#FLG05" H 6650 7995 50  0001 C CNN
+F 1 "PWR_FLAG" H 6650 8124 50  0000 C CNN
+F 2 "" H 6650 7900 50  0000 C CNN
+F 3 "" H 6650 7900 50  0000 C CNN
+	1    6650 7900
+	1    0    0    -1  
+$EndComp
+Text Label 6800 8000 0    60   ~ 0
+3V3
+Text Label 9300 8100 0    60   ~ 0
+3V3
+Text Label 9300 7400 0    60   ~ 0
+12V
+Text Label 9300 7600 0    60   ~ 0
+GND
+Text Label 9300 8600 0    60   ~ 0
+GND
+Text Label 9300 8900 0    60   ~ 0
+GND
+Text Label 9300 9200 0    60   ~ 0
+GND
+Text Label 9300 9500 0    60   ~ 0
+GND
+Text Label 9300 9800 0    60   ~ 0
+GND
+Text Label 9300 9900 0    60   ~ 0
+GND
+Text Label 9300 10200 0    60   ~ 0
+GND
+Text Label 9300 10300 0    60   ~ 0
+GND
+Text Label 9300 10600 0    60   ~ 0
+GND
+Text Label 7200 10700 0    60   ~ 0
+GND
+Text Label 7200 10400 0    60   ~ 0
+GND
+Text Label 7200 10000 0    60   ~ 0
+GND
+Text Label 7200 10100 0    60   ~ 0
+GND
+Text Label 7200 9600 0    60   ~ 0
+GND
+Text Label 7200 9700 0    60   ~ 0
+GND
+Text Label 7200 9200 0    60   ~ 0
+GND
+Text Label 7200 9000 0    60   ~ 0
+GND
+Text Label 7200 8700 0    60   ~ 0
+GND
+Wire Wire Line
+	4100 8000 3700 8000
+Wire Wire Line
+	3700 8000 3700 7850
+Wire Wire Line
+	2750 1850 2300 1850
+Wire Wire Line
+	2300 1850 2300 1550
+Wire Wire Line
+	1100 10500 650  10500
+Wire Wire Line
+	650  10500 650  10200
+Wire Wire Line
+	7100 7500 7500 7500
+Wire Wire Line
+	7100 7150 7100 7500
+Wire Wire Line
+	7100 7300 7500 7300
+Wire Wire Line
+	7500 7400 7100 7400
+Connection ~ 7100 7400
+Connection ~ 7100 7300
+Wire Wire Line
+	6650 8000 7500 8000
+Wire Wire Line
+	6650 7900 6650 8200
+Wire Wire Line
+	6650 8200 7500 8200
+Wire Wire Line
+	9200 8100 9600 8100
+Wire Wire Line
+	9600 8100 9600 8200
+Wire Wire Line
+	9600 8200 9200 8200
+Wire Wire Line
+	9200 7400 9600 7400
+Wire Wire Line
+	9600 7400 9600 7500
+Wire Wire Line
+	9600 7500 9200 7500
+Connection ~ 6650 8000
+Wire Wire Line
+	9200 7600 9600 7600
+Wire Wire Line
+	9200 8600 9600 8600
+Wire Wire Line
+	9200 8900 9600 8900
+Wire Wire Line
+	9200 9200 9600 9200
+Wire Wire Line
+	9200 9500 9600 9500
+Wire Wire Line
+	9200 9800 9600 9800
+Wire Wire Line
+	9200 9900 9600 9900
+Wire Wire Line
+	9200 10200 9600 10200
+Wire Wire Line
+	9200 10300 9600 10300
+Wire Wire Line
+	9200 10600 9600 10600
+Wire Wire Line
+	7100 10700 7500 10700
+Wire Wire Line
+	7100 10400 7500 10400
+Wire Wire Line
+	7100 10000 7500 10000
+Wire Wire Line
+	7100 10100 7500 10100
+Wire Wire Line
+	7100 9600 7500 9600
+Wire Wire Line
+	7100 9700 7500 9700
+Wire Wire Line
+	7100 9200 7500 9200
+Wire Wire Line
+	7100 9000 7500 9000
+Wire Wire Line
+	7100 8700 7500 8700
+Text Label 7200 7900 0    60   ~ 0
+GND
+Wire Wire Line
+	7100 7900 7500 7900
+Text Label 7200 7600 0    60   ~ 0
+GND
+Wire Wire Line
+	7100 7600 7500 7600
+$EndSCHEMATC

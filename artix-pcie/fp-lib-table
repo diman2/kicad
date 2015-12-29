@@ -1,0 +1,4 @@
+(fp_lib_table
+  (lib (name footlib)(type KiCad)(uri ${KIPRJMOD}/footlib)(options "")(descr ""))
+  (lib (name temp)(type KiCad)(uri ${KIPRJMOD}/temp.pretty)(options "")(descr ""))
+)
