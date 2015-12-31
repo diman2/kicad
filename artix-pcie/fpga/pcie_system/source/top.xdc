@@ -5,6 +5,5 @@
 # this is to bypass error about muxed reference clock to MMCM.
 # this tells the compiler about the configuration bank supply voltage.
 set_property CFGBVS VCCO [current_design]
-set_property CONFIG_VOLTAGE 2.5 [current_design]
+set_property CONFIG_VOLTAGE 3.3 [current_design]
 #
-set IOSTANDARD_VADJ LVCMOS33

@@ -6,11 +6,11 @@ use UNISIM.VCOMPONENTS.ALL;
 
 entity top is
 port (
-    pcie_7x_mgt_rxn : in    STD_LOGIC;
-    pcie_7x_mgt_rxp : in    STD_LOGIC;
-    pcie_7x_mgt_txn : out   STD_LOGIC;
-    pcie_7x_mgt_txp : out   STD_LOGIC;
-    pcie_perstn     : in    STD_LOGIC;
+    pcie_7x_mgt_rxn : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    pcie_7x_mgt_rxp : in STD_LOGIC_VECTOR ( 3 downto 0 );
+    pcie_7x_mgt_txn : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    pcie_7x_mgt_txp : out STD_LOGIC_VECTOR ( 3 downto 0 );
+    pcie_perstn      : in    STD_LOGIC;
     pcie_refclk_N   : in    STD_LOGIC;
     pcie_refclk_P   : in    STD_LOGIC;
     --
@@ -102,7 +102,6 @@ begin
         pcie_7x_mgt_rxp => pcie_7x_mgt_rxp,
         pcie_7x_mgt_txn => pcie_7x_mgt_txn,
         pcie_7x_mgt_txp => pcie_7x_mgt_txp,
-        pcie_perst => pcie_perst,
         pcie_perstn => pcie_perstn,
         pcie_refclk_N => pcie_refclk_N,
         pcie_refclk_P => pcie_refclk_P,

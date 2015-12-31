@@ -29,8 +29,8 @@ if { [string first $scripts_vivado_version $current_vivado_version] == -1 } {
 
 # If you do not already have a project created,
 # you can create a project using the following command:
-#    create_project project_1 myproj -part xc7vx690tffg1761-2
-#    set_property BOARD_PART xilinx.com:vc709:part0:1.5 [current_project]
+#    create_project project_1 myproj -part xc7a200tfbg676-2
+#    set_property BOARD_PART xilinx.com:ac701:part0:1.2 [current_project]
 
 # CHECKING IF PROJECT EXISTS
 if { [get_projects -quiet] eq "" } {
@@ -156,27 +156,22 @@ proc create_hier_cell_pcie_bridge { parentCell nameHier } {
   create_bd_pin -dir O -type clk S00_ACLK
   create_bd_pin -dir I -type rst aux_reset_in
   create_bd_pin -dir I -type rst ext_reset_in
-  create_bd_pin -dir I -type rst sys_rst_n
-
-  # Create instance: axi_pcie3_0, and set properties
-  set axi_pcie3_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_pcie3:2.0 axi_pcie3_0 ]
-  set_property -dict [ list \
-CONFIG.PCIE_BOARD_INTERFACE {pcie_express} \
-CONFIG.SYS_RST_N_BOARD_INTERFACE {pcie_perst} \
-CONFIG.axi_data_width {64_bit} \
-CONFIG.axisten_freq {125} \
-CONFIG.pf0_bar0_scale {Megabytes} \
-CONFIG.pf0_bar0_size {16} \
-CONFIG.pf0_device_id {7024} \
-CONFIG.pl_link_cap_max_link_speed {5.0_GT/s} \
-CONFIG.plltype {QPLL1} \
- ] $axi_pcie3_0
 
   # Create instance: axi_pcie3_0_axi_periph, and set properties
   set axi_pcie3_0_axi_periph [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_interconnect:2.1 axi_pcie3_0_axi_periph ]
   set_property -dict [ list \
 CONFIG.NUM_MI {1} \
  ] $axi_pcie3_0_axi_periph
+
+  # Create instance: axi_pcie_0, and set properties
+  set axi_pcie_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:axi_pcie:2.7 axi_pcie_0 ]
+  set_property -dict [ list \
+CONFIG.DEVICE_ID {0x7022} \
+CONFIG.MAX_LINK_SPEED {5.0_GT/s} \
+CONFIG.M_AXI_DATA_WIDTH {128} \
+CONFIG.NO_OF_LANES {X4} \
+CONFIG.S_AXI_DATA_WIDTH {128} \
+ ] $axi_pcie_0
 
   # Create instance: fit_timer_0, and set properties
   set fit_timer_0 [ create_bd_cell -type ip -vlnv xilinx.com:ip:fit_timer:2.0 fit_timer_0 ]
@@ -205,22 +200,56 @@ CONFIG.CONST_WIDTH {5} \
  ] $xlconstant_0
 
   # Create interface connections
-  connect_bd_intf_net -intf_net axi_pcie3_0_M_AXI [get_bd_intf_pins axi_pcie3_0/M_AXI] [get_bd_intf_pins axi_pcie3_0_axi_periph/S00_AXI]
   connect_bd_intf_net -intf_net axi_pcie3_0_axi_periph_M00_AXI [get_bd_intf_pins M00_AXI] [get_bd_intf_pins axi_pcie3_0_axi_periph/M00_AXI]
-  connect_bd_intf_net -intf_net axi_pcie3_0_pcie_7x_mgt [get_bd_intf_pins pcie_7x_mgt] [get_bd_intf_pins axi_pcie3_0/pcie_7x_mgt]
+  connect_bd_intf_net -intf_net axi_pcie_0_M_AXI [get_bd_intf_pins axi_pcie3_0_axi_periph/S00_AXI] [get_bd_intf_pins axi_pcie_0/M_AXI]
+  connect_bd_intf_net -intf_net axi_pcie_0_pcie_7x_mgt [get_bd_intf_pins pcie_7x_mgt] [get_bd_intf_pins axi_pcie_0/pcie_7x_mgt]
 
   # Create port connections
   connect_bd_net -net IBUF_DS_N_1 [get_bd_pins IBUF_DS_N] [get_bd_pins util_ds_buf_0/IBUF_DS_N]
   connect_bd_net -net IBUF_DS_P_1 [get_bd_pins IBUF_DS_P] [get_bd_pins util_ds_buf_0/IBUF_DS_P]
   connect_bd_net -net aux_reset_in_1 [get_bd_pins aux_reset_in] [get_bd_pins proc_sys_reset_0/aux_reset_in]
-  connect_bd_net -net axi_pcie3_0_axi_aclk [get_bd_pins S00_ACLK] [get_bd_pins axi_pcie3_0/axi_aclk] [get_bd_pins axi_pcie3_0/axi_ctl_aclk] [get_bd_pins axi_pcie3_0_axi_periph/ACLK] [get_bd_pins axi_pcie3_0_axi_periph/M00_ACLK] [get_bd_pins axi_pcie3_0_axi_periph/S00_ACLK] [get_bd_pins fit_timer_0/Clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk]
-  connect_bd_net -net fit_timer_0_Interrupt [get_bd_pins axi_pcie3_0/intx_msi_request] [get_bd_pins fit_timer_0/Interrupt]
-  connect_bd_net -net pcie_perst_1 [get_bd_pins sys_rst_n] [get_bd_pins axi_pcie3_0/sys_rst_n]
-  connect_bd_net -net proc_sys_reset_0_interconnect_aresetn [get_bd_pins axi_pcie3_0_axi_periph/ARESETN] [get_bd_pins proc_sys_reset_0/interconnect_aresetn]
+  connect_bd_net -net axi_pcie3_0_axi_aclk [get_bd_pins S00_ACLK] [get_bd_pins axi_pcie3_0_axi_periph/ACLK] [get_bd_pins axi_pcie3_0_axi_periph/M00_ACLK] [get_bd_pins axi_pcie3_0_axi_periph/S00_ACLK] [get_bd_pins axi_pcie_0/axi_aclk_out] [get_bd_pins fit_timer_0/Clk] [get_bd_pins proc_sys_reset_0/slowest_sync_clk]
+  connect_bd_net -net fit_timer_0_Interrupt [get_bd_pins axi_pcie_0/INTX_MSI_Request] [get_bd_pins fit_timer_0/Interrupt]
+  connect_bd_net -net proc_sys_reset_0_interconnect_aresetn [get_bd_pins axi_pcie3_0_axi_periph/ARESETN] [get_bd_pins axi_pcie_0/axi_aresetn] [get_bd_pins proc_sys_reset_0/interconnect_aresetn]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_pins Rst] [get_bd_pins axi_pcie3_0_axi_periph/M00_ARESETN] [get_bd_pins axi_pcie3_0_axi_periph/S00_ARESETN] [get_bd_pins fit_timer_0/Rst] [get_bd_pins proc_sys_reset_0/peripheral_aresetn]
   connect_bd_net -net reset_rtl_1 [get_bd_pins ext_reset_in] [get_bd_pins proc_sys_reset_0/ext_reset_in]
-  connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins axi_pcie3_0/refclk] [get_bd_pins util_ds_buf_0/IBUF_OUT]
-  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_pcie3_0/msi_vector_num] [get_bd_pins xlconstant_0/dout]
+  connect_bd_net -net util_ds_buf_0_IBUF_OUT [get_bd_pins axi_pcie_0/REFCLK] [get_bd_pins util_ds_buf_0/IBUF_OUT]
+  connect_bd_net -net xlconstant_0_dout [get_bd_pins axi_pcie_0/MSI_Vector_Num] [get_bd_pins xlconstant_0/dout]
+
+  # Perform GUI Layout
+  regenerate_bd_layout -hierarchy [get_bd_cells /pcie_bridge] -layout_string {
+   guistr: "# # String gsaved with Nlview 6.5.5  2015-06-26 bk=1.3371 VDI=38 GEI=35 GUI=JA:1.8
+#  -string -flagsOSRD
+preplace port aux_reset_in -pg 1 -y 90 -defaultsOSRD
+preplace port S00_ACLK -pg 1 -y 330 -defaultsOSRD
+preplace port ext_reset_in -pg 1 -y 70 -defaultsOSRD
+preplace port pcie_7x_mgt -pg 1 -y 20 -defaultsOSRD
+preplace port M00_AXI -pg 1 -y 190 -defaultsOSRD
+preplace portBus IBUF_DS_P -pg 1 -y 290 -defaultsOSRD
+preplace portBus Rst -pg 1 -y 70 -defaultsOSRD
+preplace portBus IBUF_DS_N -pg 1 -y 310 -defaultsOSRD
+preplace inst xlconstant_0 -pg 1 -lvl 1 -y 410 -defaultsOSRD
+preplace inst axi_pcie_0 -pg 1 -lvl 2 -y 370 -defaultsOSRD
+preplace inst fit_timer_0 -pg 1 -lvl 1 -y 160 -defaultsOSRD
+preplace inst proc_sys_reset_0 -pg 1 -lvl 2 -y 90 -defaultsOSRD
+preplace inst axi_pcie3_0_axi_periph -pg 1 -lvl 3 -y 190 -defaultsOSRD
+preplace inst util_ds_buf_0 -pg 1 -lvl 1 -y 290 -defaultsOSRD
+preplace netloc axi_pcie_0_pcie_7x_mgt 1 2 2 720 20 NJ
+preplace netloc axi_pcie3_0_axi_periph_M00_AXI 1 3 1 NJ
+preplace netloc fit_timer_0_Interrupt 1 1 1 350
+preplace netloc util_ds_buf_0_IBUF_OUT 1 1 1 340
+preplace netloc proc_sys_reset_0_interconnect_aresetn 1 1 2 360 190 710
+preplace netloc xlconstant_0_dout 1 1 1 NJ
+preplace netloc IBUF_DS_N_1 1 0 1 NJ
+preplace netloc axi_pcie_0_M_AXI 1 2 1 740
+preplace netloc IBUF_DS_P_1 1 0 1 NJ
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 0 4 20 220 NJ 220 730 70 NJ
+preplace netloc axi_pcie3_0_axi_aclk 1 0 4 20 100 360 180 750 330 NJ
+preplace netloc reset_rtl_1 1 0 2 NJ 70 NJ
+preplace netloc aux_reset_in_1 1 0 2 NJ 80 NJ
+levelinfo -pg 1 0 180 540 900 1070 -top 0 -bot 500
+",
+}
 
   # Restore current instance
   current_bd_instance $oldCurInst
@@ -266,10 +295,6 @@ proc create_root_design { parentCell } {
   set_property -dict [ list \
 CONFIG.POLARITY {ACTIVE_HIGH} \
  ] $cpu_reset
-  set pcie_perst [ create_bd_port -dir I -type rst pcie_perst ]
-  set_property -dict [ list \
-CONFIG.POLARITY {ACTIVE_LOW} \
- ] $pcie_perst
   set pcie_perstn [ create_bd_port -dir I -type rst pcie_perstn ]
   set pcie_refclk_N [ create_bd_port -dir I pcie_refclk_N ]
   set pcie_refclk_P [ create_bd_port -dir I pcie_refclk_P ]
@@ -321,7 +346,6 @@ CONFIG.POLARITY {ACTIVE_LOW} \
   connect_bd_net -net IBUF_DS_P_1 [get_bd_ports pcie_refclk_P] [get_bd_pins pcie_bridge/IBUF_DS_P]
   connect_bd_net -net aux_reset_in_1 [get_bd_ports pcie_perstn] [get_bd_pins pcie_bridge/aux_reset_in]
   connect_bd_net -net axi_pcie3_0_axi_aclk [get_bd_ports axi_clk] [get_bd_pins pcie_bridge/S00_ACLK] [get_bd_pins regfilex16_v1_0_0/s00_axi_aclk]
-  connect_bd_net -net pcie_perst_1 [get_bd_ports pcie_perst] [get_bd_pins pcie_bridge/sys_rst_n]
   connect_bd_net -net proc_sys_reset_0_peripheral_aresetn [get_bd_ports axi_reset_n] [get_bd_pins pcie_bridge/Rst] [get_bd_pins regfilex16_v1_0_0/s00_axi_aresetn]
   connect_bd_net -net regfilex16_v1_0_0_slv_reg0 [get_bd_ports slv_reg0] [get_bd_pins regfilex16_v1_0_0/slv_reg0]
   connect_bd_net -net regfilex16_v1_0_0_slv_reg1 [get_bd_ports slv_reg1] [get_bd_pins regfilex16_v1_0_0/slv_reg1]
@@ -358,7 +382,7 @@ CONFIG.POLARITY {ACTIVE_LOW} \
   connect_bd_net -net slv_read9_1 [get_bd_ports slv_read9] [get_bd_pins regfilex16_v1_0_0/slv_read9]
 
   # Create address segments
-  create_bd_addr_seg -range 0x10000 -offset 0x44A00000 [get_bd_addr_spaces pcie_bridge/axi_pcie3_0/M_AXI] [get_bd_addr_segs regfilex16_v1_0_0/s00_axi/reg0] SEG_regfilex16_v1_0_0_reg0
+  create_bd_addr_seg -range 0x10000 -offset 0x40000000 [get_bd_addr_spaces pcie_bridge/axi_pcie_0/M_AXI] [get_bd_addr_segs regfilex16_v1_0_0/s00_axi/reg0] SEG_regfilex16_v1_0_0_reg0
 
   # Perform GUI Layout
   regenerate_bd_layout -layout_string {
@@ -367,10 +391,9 @@ CONFIG.POLARITY {ACTIVE_LOW} \
 preplace port cpu_reset -pg 1 -y 110 -defaultsOSRD
 preplace port pcie_refclk_N -pg 1 -y 50 -defaultsOSRD
 preplace port pcie_refclk_P -pg 1 -y 70 -defaultsOSRD
-preplace port pcie_perst -pg 1 -y 130 -defaultsOSRD
 preplace port axi_clk -pg 1 -y 120 -defaultsOSRD
 preplace port pcie_perstn -pg 1 -y 90 -defaultsOSRD
-preplace port pcie_7x_mgt -pg 1 -y 80 -defaultsOSRD
+preplace port pcie_7x_mgt -pg 1 -y 60 -defaultsOSRD
 preplace portBus slv_read11 -pg 1 -y 400 -defaultsOSRD
 preplace portBus slv_reg8 -pg 1 -y 350 -defaultsOSRD
 preplace portBus slv_read12 -pg 1 -y 420 -defaultsOSRD
@@ -406,7 +429,7 @@ preplace portBus slv_reg15 -pg 1 -y 490 -defaultsOSRD
 preplace portBus slv_reg7 -pg 1 -y 330 -defaultsOSRD
 preplace inst pcie_bridge -pg 1 -lvl 1 -y 90 -defaultsOSRD
 preplace inst regfilex16_v1_0_0 -pg 1 -lvl 2 -y 340 -defaultsOSRD
-preplace netloc pcie_bridge_pcie_7x_mgt 1 1 2 NJ 80 NJ
+preplace netloc pcie_bridge_pcie_7x_mgt 1 1 2 NJ 60 NJ
 preplace netloc slv_read6_1 1 0 2 NJ 300 NJ
 preplace netloc slv_read5_1 1 0 2 NJ 280 NJ
 preplace netloc slv_read4_1 1 0 2 NJ 260 NJ
@@ -416,8 +439,7 @@ preplace netloc regfilex16_v1_0_0_slv_reg9 1 2 1 NJ
 preplace netloc slv_read2_1 1 0 2 NJ 220 NJ
 preplace netloc slv_read15_1 1 0 2 NJ 480 NJ
 preplace netloc slv_read8_1 1 0 2 NJ 340 NJ
-preplace netloc pcie_perst_1 1 0 1 NJ
-preplace netloc axi_pcie3_0_axi_periph_M00_AXI 1 1 1 290
+preplace netloc axi_pcie3_0_axi_periph_M00_AXI 1 1 1 280
 preplace netloc regfilex16_v1_0_0_slv_reg0 1 2 1 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg10 1 2 1 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg1 1 2 1 NJ
@@ -433,7 +455,7 @@ preplace netloc regfilex16_v1_0_0_slv_reg3 1 2 1 NJ
 preplace netloc IBUF_DS_P_1 1 0 1 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg13 1 2 1 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg4 1 2 1 NJ
-preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 2 280 90 NJ
+preplace netloc proc_sys_reset_0_peripheral_aresetn 1 1 2 290 90 NJ
 preplace netloc axi_pcie3_0_axi_aclk 1 1 2 300 110 NJ
 preplace netloc slv_read13_1 1 0 2 NJ 440 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg14 1 2 1 NJ
@@ -447,7 +469,7 @@ preplace netloc slv_read12_1 1 0 2 NJ 420 NJ
 preplace netloc reset_rtl_1 1 0 1 NJ
 preplace netloc regfilex16_v1_0_0_slv_reg7 1 2 1 NJ
 preplace netloc aux_reset_in_1 1 0 1 NJ
-levelinfo -pg 1 0 150 440 600 -top 0 -bot 570
+levelinfo -pg 1 -10 150 460 620 -top 0 -bot 570
 ",
 }
 
