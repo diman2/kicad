@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:artix-pcie-board-rescue
 LIBS:TOFE
 LIBS:xilinx7
 LIBS:power

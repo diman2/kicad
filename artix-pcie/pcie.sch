@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:artix-pcie-board-rescue
 LIBS:TOFE
 LIBS:xilinx7
 LIBS:power
@@ -49,6 +50,8 @@ $Comp
 L TOFE-4X P2
 U 1 1 5685ABCA
 P 4200 5150
+AR Path="/5685ABCA" Ref="P2"  Part="1" 
+AR Path="/5685901C/5685ABCA" Ref="P2"  Part="1" 
 F 0 "P2" H 3750 8137 60  0000 C CNN
 F 1 "TOFE-4X" H 3750 8031 60  0000 C CNN
 F 2 "footlib:TOFE_4X_HalfHeight" H 2900 4850 60  0001 C CNN
@@ -152,14 +155,14 @@ Wire Wire Line
 Connection ~ 4950 3750
 Text HLabel 5850 6350 2    60   Output ~ 0
 GND
-Text HLabel 6150 3850 2    60   Output ~ 0
-pcie_refclk+
-Text HLabel 6150 3950 2    60   Output ~ 0
-pcie_refclk-
+Text HLabel 6350 3850 2    60   Output ~ 0
+REFCLK+
+Text HLabel 6350 3950 2    60   Output ~ 0
+REFCLK-
 Wire Wire Line
-	4600 3850 6150 3850
+	4600 3850 6350 3850
 Wire Wire Line
-	6150 3950 4600 3950
+	4600 3950 6350 3950
 Wire Wire Line
 	2900 3950 1500 3950
 Wire Wire Line
@@ -224,4 +227,33 @@ Text HLabel 6350 5550 2    60   Input ~ 0
 PERp3
 Text HLabel 6350 5650 2    60   Input ~ 0
 PERn3
+Wire Wire Line
+	2900 5750 2400 5750
+Wire Wire Line
+	2400 5750 2400 2000
+Wire Wire Line
+	2400 2000 4700 2000
+Wire Wire Line
+	4700 2000 4700 2450
+Wire Wire Line
+	4700 2450 4600 2450
+Text Label 3700 2000 0    60   ~ 0
+PRSNT#
+NoConn ~ 2900 4250
+NoConn ~ 2900 3750
+NoConn ~ 2900 5650
+NoConn ~ 4600 5850
+NoConn ~ 4600 4550
+NoConn ~ 4600 2850
+NoConn ~ 4600 2950
+NoConn ~ 4600 3050
+NoConn ~ 4600 3150
+NoConn ~ 2900 3250
+Text HLabel 6350 3450 2    60   Output ~ 0
+PERST#
+Wire Wire Line
+	4600 3450 6350 3450
+NoConn ~ 2900 2850
+NoConn ~ 2900 2950
+NoConn ~ 2900 3450
 $EndSCHEMATC

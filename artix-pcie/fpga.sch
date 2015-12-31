@@ -1,4 +1,5 @@
 EESchema Schematic File Version 2
+LIBS:artix-pcie-board-rescue
 LIBS:TOFE
 LIBS:xilinx7
 LIBS:power
@@ -166,4 +167,42 @@ F 3 "" H 9100 7850 60  0000 C CNN
 	1    9100 7850
 	1    0    0    -1  
 $EndComp
+Text HLabel 11750 7550 0    60   Input ~ 0
+PETp0
+Text HLabel 11750 7650 0    60   Input ~ 0
+PETn0
+Text HLabel 11750 8150 0    60   Input ~ 0
+PETp1
+Text HLabel 11750 8250 0    60   Input ~ 0
+PETn1
+Text HLabel 11750 8550 0    60   Input ~ 0
+PETp2
+Text HLabel 11750 8650 0    60   Input ~ 0
+PETn2
+Text HLabel 11750 8950 0    60   Input ~ 0
+PETp3
+Text HLabel 11750 9050 0    60   Input ~ 0
+PETn3
+Text HLabel 12550 7500 0    60   Input ~ 0
+REFCLK+
+Text HLabel 12550 7600 0    60   Input ~ 0
+REFCLK-
+Text HLabel 12550 7800 0    60   Output ~ 0
+PERp0
+Text HLabel 12550 7900 0    60   Output ~ 0
+PERn0
+Text HLabel 12550 8400 0    60   Output ~ 0
+PERp1
+Text HLabel 12550 8500 0    60   Output ~ 0
+PERn1
+Text HLabel 12550 8800 0    60   Output ~ 0
+PERp2
+Text HLabel 12550 8900 0    60   Output ~ 0
+PERn2
+Text HLabel 12550 9200 0    60   Output ~ 0
+PERp3
+Text HLabel 12550 9300 0    60   Output ~ 0
+PERn3
+Text HLabel 12550 7100 0    60   Input ~ 0
+PERST#
 $EndSCHEMATC
