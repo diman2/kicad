@@ -35,7 +35,7 @@ EELAYER 25 0
 EELAYER END
 $Descr A4 11693 8268
 encoding utf-8
-Sheet 1 4
+Sheet 4 4
 Title ""
 Date ""
 Rev ""
@@ -45,22 +45,4 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-$Sheet
-S 7650 1800 1600 1700
-U 568574A3
-F0 "Sheet568574A2" 60
-F1 "fpga.sch" 60
-$EndSheet
-$Sheet
-S 2450 5150 1950 1700
-U 5685901C
-F0 "Sheet5685901B" 60
-F1 "pcie.sch" 60
-$EndSheet
-$Sheet
-S 2350 1800 1250 1550
-U 56859894
-F0 "Sheet56859893" 60
-F1 "power.sch" 60
-$EndSheet
 $EndSCHEMATC
