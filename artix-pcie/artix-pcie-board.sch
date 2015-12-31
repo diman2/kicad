@@ -180,4 +180,6 @@ Text Label 5000 4450 0    60   ~ 0
 pcie_PETn2
 Text Label 5000 4700 0    60   ~ 0
 pcie_PETn3
+Text Notes 900  6550 0    60   ~ 0
+TODO\n- PMODS\n- Oscillator\n- LEDs
 $EndSCHEMATC
