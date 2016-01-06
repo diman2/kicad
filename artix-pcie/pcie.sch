@@ -62,9 +62,15 @@ $EndComp
 Text HLabel 6100 1850 2    60   Output ~ 0
 12V
 Wire Wire Line
-	6100 1850 2750 1850
+	6100 1850 4800 1850
 Wire Wire Line
-	2750 1850 2750 2650
+	4800 1850 2750 1850
+Wire Wire Line
+	2750 1850 2750 2450
+Wire Wire Line
+	2750 2450 2750 2550
+Wire Wire Line
+	2750 2550 2750 2650
 Wire Wire Line
 	2750 2650 2900 2650
 Wire Wire Line
@@ -76,7 +82,9 @@ Connection ~ 2750 2450
 Wire Wire Line
 	4800 2650 4600 2650
 Wire Wire Line
-	4800 1850 4800 2650
+	4800 1850 4800 2550
+Wire Wire Line
+	4800 2550 4800 2650
 Wire Wire Line
 	4800 2550 4600 2550
 Connection ~ 4800 1850
@@ -86,9 +94,31 @@ NoConn ~ 4600 3350
 NoConn ~ 2900 3150
 NoConn ~ 2900 3350
 Wire Wire Line
-	5850 6350 2600 6350
+	5850 6350 4950 6350
 Wire Wire Line
-	2600 6350 2600 2750
+	4950 6350 2600 6350
+Wire Wire Line
+	2600 6350 2600 5850
+Wire Wire Line
+	2600 5850 2600 5550
+Wire Wire Line
+	2600 5550 2600 5250
+Wire Wire Line
+	2600 5250 2600 5150
+Wire Wire Line
+	2600 5150 2600 4850
+Wire Wire Line
+	2600 4850 2600 4750
+Wire Wire Line
+	2600 4750 2600 4350
+Wire Wire Line
+	2600 4350 2600 4150
+Wire Wire Line
+	2600 4150 2600 3850
+Wire Wire Line
+	2600 3850 2600 3050
+Wire Wire Line
+	2600 3050 2600 2750
 Wire Wire Line
 	2600 2750 2900 2750
 Wire Wire Line
@@ -124,7 +154,25 @@ Connection ~ 2600 5850
 Wire Wire Line
 	4600 2750 4950 2750
 Wire Wire Line
-	4950 2750 4950 6350
+	4950 2750 4950 3750
+Wire Wire Line
+	4950 3750 4950 4050
+Wire Wire Line
+	4950 4050 4950 4350
+Wire Wire Line
+	4950 4350 4950 4650
+Wire Wire Line
+	4950 4650 4950 4950
+Wire Wire Line
+	4950 4950 4950 5050
+Wire Wire Line
+	4950 5050 4950 5350
+Wire Wire Line
+	4950 5350 4950 5450
+Wire Wire Line
+	4950 5450 4950 5750
+Wire Wire Line
+	4950 5750 4950 6350
 Connection ~ 4950 6350
 Wire Wire Line
 	4600 5750 4950 5750

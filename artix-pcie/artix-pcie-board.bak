@@ -103,6 +103,8 @@ S 7900 2300 1250 1550
 U 56859894
 F0 "Sheet56859893" 60
 F1 "power.sch" 60
+F2 "12V" I L 7900 2400 60 
+F3 "GND" I L 7900 2600 60 
 $EndSheet
 Wire Wire Line
 	4800 2400 5950 2400
@@ -181,5 +183,13 @@ pcie_PETn2
 Text Label 5000 4700 0    60   ~ 0
 pcie_PETn3
 Text Notes 900  6550 0    60   ~ 0
-- PMODS\n- Oscillator\n- LEDs
+TODO\n- PMODS\n- Oscillator\n- LEDs
+Wire Wire Line
+	7900 2400 6950 2400
+Wire Wire Line
+	6950 2600 7900 2600
+Text Label 7400 2400 2    60   ~ 0
+12V
+Text Label 7400 2600 2    60   ~ 0
+GND
 $EndSCHEMATC

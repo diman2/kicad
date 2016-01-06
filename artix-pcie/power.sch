@@ -46,4 +46,18 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
+Text HLabel 1950 1950 0    60   Input ~ 0
+12V
+Text HLabel 1950 2200 0    60   Input ~ 0
+GND
+Text HLabel 3800 1950 2    60   Output ~ 0
+3V3
+Text HLabel 3800 2250 2    60   Output ~ 0
+1V8
+Text HLabel 3850 2500 2    60   Output ~ 0
+MGTAVCC
+Text HLabel 3900 2800 2    60   Output ~ 0
+MGTAVTT
+Text HLabel 3900 3300 2    60   Output ~ 0
+VCCINT
 $EndSCHEMATC
